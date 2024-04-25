@@ -18,5 +18,11 @@ namespace Web_Framework.WebApp.LoginPage
         {
 
         }
+        [TestMethod]
+        [TestCategory("Login"), TestCategory("Negative")]
+        public void LoginNegative()
+        {
+
+        }
     }
 }
