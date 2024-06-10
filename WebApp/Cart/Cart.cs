@@ -10,14 +10,5 @@ namespace Web_Framework.WebApp.LoginPage
 {
     partial class Cart : CorePage
     {   
-        public void Login(string url, string username, string password)
-        {
-            driver.Url = url;
-            driver.FindElement(usernameId).SendKeys(username);
-            driver.FindElement(passwordId).SendKeys(password);
-            driver.FindElement(submitBtnId).Click();
-
-            driver.Close();
-        }
     }
 }

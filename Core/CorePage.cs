@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
 using System.Configuration;
+using OpenQA.Selenium.Firefox;
 
 namespace First_Framework.Core
 {
@@ -25,15 +26,9 @@ namespace First_Framework.Core
         public void Write(By by, string value, int TimeToReadyElement = 0) { }
         public void Click(By by, int TimeToReadyElement = 0) { }
         public void OpenURL(string url) { }
-        public string GetElementText(By by) { }
-        public bool GetElementState() { }
-
+       /* public string GetElementText(By by) { }
+        public bool GetElementState() { }*/
         #endregion
 
-
-        public void SeleniumIntializor()
-        {
-            driver = new ChromeDriver();
-        }
     }
 }

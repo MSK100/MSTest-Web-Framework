@@ -13,10 +13,17 @@ namespace Web_Framework.WebApp.LoginPage
     public partial class Cart
     {
         [TestMethod]
-        [TestCategory("Login"), TestCategory("Positive"), TestCategory("UAT")]
-        public void LoginPositive()
+        [TestCategory("Checkout"), TestCategory("Positive"), TestCategory("UAT")]
+        public void Checkout()
         {
-
+            driver.FindElement(AddtoCartXp).Click();
+            driver.FindElement(CartXp).Click();
+            driver.FindElement(CheckoutXp).Click();
+            driver.FindElement(Chk_FirstNameId).SendKeys("Test");
+            driver.FindElement(Chk_LastNameId).SendKeys("Test");
+            driver.FindElement(Chk_ZipCodeId).SendKeys("1000");
+            driver.FindElement(ContinueXp).Click();
+            driver.FindElement(FinishXp).Click();
         }
     }
 }

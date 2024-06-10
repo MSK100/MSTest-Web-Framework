@@ -10,7 +10,8 @@ namespace First_Framework.Core
 {
     public class Keywords : CorePage
     {
-        public const string ChromeBrowser = "Chrome";
+        /*public const string ChromeBrowser = "Chrome";
+        public const string FireFoxBrowser = "Firefox";*/
     }
 
 }

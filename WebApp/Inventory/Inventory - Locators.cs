@@ -11,8 +11,8 @@ namespace Web_Framework.WebApp.LoginPage
 { 
     partial class Inventory
     {
-        By usernameId = By.Id("user-name");
-        By passwordId = By.Id("password");
-        By submitBtnId = By.Id("login-button");
+        By productOneId = By.Id("item_4_title_link");
+        By productTwoId = By.Id("item_0_title_link");
+        By productBackBtnCs = By.ClassName("inventory_details_back_button");
     }
 }

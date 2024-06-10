@@ -6,20 +6,19 @@ using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
+using System.Security.Policy;
 
 namespace Web_Framework.WebApp.LoginPage
 {
-    [TestClass]
     public partial class LoginPage
     {
-        [TestMethod]
-        [TestCategory("Login"), TestCategory("Positive"), TestCategory("UAT")]
-        public void LoginPositive()
+        public void LoginPositive(string url, string username, string password)
         {
-
+            driver.Url = url;
+            driver.FindElement(usernameId).SendKeys(username);
+            driver.FindElement(passwordId).SendKeys(password);
+            driver.FindElement(submitBtnId).Click();
         }
-        [TestMethod]
-        [TestCategory("Login"), TestCategory("Negative")]
         public void LoginNegative()
         {
 

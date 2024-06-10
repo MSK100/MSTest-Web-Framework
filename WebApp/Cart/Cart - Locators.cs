@@ -9,10 +9,16 @@ using OpenQA.Selenium;
 
 namespace Web_Framework.WebApp.LoginPage
 { 
-    partial class Cart
+    public partial class Cart
     {
-        By usernameId = By.Id("user-name");
-        By passwordId = By.Id("password");
-        By submitBtnId = By.Id("login-button");
+        By AddtoCartXp = By.XPath("//*[@class=\'btn_primary btn_inventory\']");
+        By RemoveXp = By.XPath("//*[@class=\'btn_secondary btn_inventory\']");
+        By CartXp = By.XPath("//a[@class=\'shopping_cart_link fa-layers fa-fw\']");
+        By CheckoutXp = By.XPath("//a[@class=\'btn_action checkout_button\']");
+        By Chk_FirstNameId = By.Id("first-name");
+        By Chk_LastNameId = By.Id("last-name");
+        By Chk_ZipCodeId = By.Id("postal-code");
+        By ContinueXp = By.XPath("//input[@class=\'btn_primary cart_button\']");
+        By FinishXp = By.XPath("//a[@class=\'btn_action cart_button\']");
     }
 }

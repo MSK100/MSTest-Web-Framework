@@ -7,6 +7,8 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
 using Docker.DotNet.Models;
 using System.Configuration;
+using OpenQA.Selenium.Firefox;
+using Xamarin.Essentials;
 
 namespace First_Framework.Core
 {
@@ -14,16 +16,22 @@ namespace First_Framework.Core
     {
         #region Selenium_Initialization
 
-        const string chrome = Keywords.ChromeBrowser;
-        public static IWebDriver Selenium_Init(string browser = "Chrome")
+        public static string browser = "chrome";
+
+        public static void Selenium_Init()
         {
-            if (browser == "Chrome")
+            if (browser == "chrome")
             {
-                IWebDriver driver = new ChromeDriver();
-                CorePage.driver = driver;
-                return driver;
+                    var chromeOptions = new ChromeOptions();
+                    chromeOptions.AddArgument("--start-maximized");
+                    driver = new ChromeDriver(chromeOptions);
             }
-            return driver;
+            else if (browser == "firefox")
+            {
+                    FirefoxOptions firefoxOptions = new FirefoxOptions();
+                    firefoxOptions.AddArgument("");
+                    driver = new FirefoxDriver(firefoxOptions);
+            }
         }
         #endregion
 

@@ -9,15 +9,7 @@ using First_Framework.Core;
 namespace Web_Framework.WebApp.LoginPage
 {
     partial class LoginPage : CorePage
-    {   
-        public void Login(string url, string username, string password)
-        {
-            driver.Url = url;
-            driver.FindElement(usernameId).SendKeys(username);
-            driver.FindElement(passwordId).SendKeys(password);
-            driver.FindElement(submitBtnId).Click();
-
-            driver.Close();
-        }
+    {
+        //public void Login(string url, string username, string password);
     }
 }

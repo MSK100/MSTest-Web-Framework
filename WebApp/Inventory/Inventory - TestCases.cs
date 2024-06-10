@@ -13,10 +13,11 @@ namespace Web_Framework.WebApp.LoginPage
     public partial class Inventory
     {
         [TestMethod]
-        [TestCategory("Login"), TestCategory("Positive"), TestCategory("UAT")]
-        public void LoginPositive()
+        [TestCategory("Product"), TestCategory("Positive"), TestCategory("UAT")]
+        public void OpenProduct()
         {
-
+            driver.FindElement(productOneId).Click();
+            driver.FindElement(productBackBtnCs).Click();
         }
     }
 }
