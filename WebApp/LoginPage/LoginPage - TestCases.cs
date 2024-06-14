@@ -19,9 +19,5 @@ namespace Web_Framework.WebApp.LoginPage
             driver.FindElement(passwordId).SendKeys(password);
             driver.FindElement(submitBtnId).Click();
         }
-        public void LoginNegative()
-        {
-
-        }
     }
 }

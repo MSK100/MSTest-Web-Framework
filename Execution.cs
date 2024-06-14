@@ -51,10 +51,9 @@ namespace Web_Framework
         Cart cart = new Cart();
 
         [TestMethod]
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML", "Login.xml", "Login", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML", "WebAppData.xml", "Login", DataAccessMethod.Sequential)]
         public void Login()
         {
-
             string url = TestContext.DataRow["url"].ToString();
             string username = TestContext.DataRow["username"].ToString();
             string password = TestContext.DataRow["password"].ToString();
@@ -63,7 +62,6 @@ namespace Web_Framework
         }
 
         [TestMethod]
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML", "Login.xml", "Login", DataAccessMethod.Sequential)]
         public void ProductClick()
         {
             Login();
@@ -71,11 +69,34 @@ namespace Web_Framework
         }
 
         [TestMethod]
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML", "Login.xml", "Login", DataAccessMethod.Sequential)]
-        public void CheckoutFlow()
+        public void FilterApplication()
         {
             Login();
-            cart.Checkout();
+            inventory.Filters();
+        }
+
+        [TestMethod]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML", "WebAppData.xml", "CheckoutFlow", DataAccessMethod.Sequential)]
+        public void CheckoutFlow()
+        {
+            string fname = TestContext.DataRow["fname"].ToString();
+            string lname = TestContext.DataRow["lname"].ToString();
+            string zip = TestContext.DataRow["zip"].ToString();
+
+            Login();
+            cart.Checkout(fname, lname, zip);
+        }
+
+        [TestMethod]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML", "WebAppData.xml", "CheckoutFromProdDetail", DataAccessMethod.Sequential)]
+        public void CheckoutFromProdDetail()
+        {
+            string fname = TestContext.DataRow["fname"].ToString();
+            string lname = TestContext.DataRow["lname"].ToString();
+            string zip = TestContext.DataRow["zip"].ToString();
+
+            Login();
+            cart.CheckoutFromProductDetail(fname, lname, zip);
         }
     }
 }
