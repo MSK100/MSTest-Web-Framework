@@ -11,7 +11,11 @@ namespace Web_Framework.WebApp.LoginPage
 { 
     public partial class Cart
     {
-        By AddtoCartXp = By.XPath("//*[@class=\'btn_primary btn_inventory\']");
+        By AddtoCartXp1 = By.XPath("(//div[@class=\"pricebar\"]//button)[1]");
+        By AddtoCartXp2 = By.XPath("(//div[@class=\"pricebar\"]//button)[2]");
+        By AddtoCartXp3 = By.XPath("(//div[@class=\"pricebar\"]//button)[3]");
+        By AddtoCartXp4 = By.XPath("(//div[@class=\"pricebar\"]//button)[4]");
+        By AddtoCartXp5 = By.XPath("(//div[@class=\"pricebar\"]//button)[5]");
         By AddtoCartProductDetail = By.XPath("//button[@class=\'btn_primary btn_inventory\']");
         By RemoveXp = By.XPath("//*[@class=\'btn_secondary btn_inventory\']");
         By CartXp = By.XPath("//a[@class=\'shopping_cart_link fa-layers fa-fw\']");

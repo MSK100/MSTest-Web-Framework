@@ -98,5 +98,17 @@ namespace Web_Framework
             Login();
             cart.CheckoutFromProductDetail(fname, lname, zip);
         }
+
+        [TestMethod]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML", "WebAppData.xml", "CheckoutMultipleItems", DataAccessMethod.Sequential)]
+        public void CheckoutMultipleItems()
+        {
+            string fname = TestContext.DataRow["fname"].ToString();
+            string lname = TestContext.DataRow["lname"].ToString();
+            string zip = TestContext.DataRow["zip"].ToString();
+
+            Login();
+            cart.CheckoutMultipleProducts(fname, lname, zip);
+        }
     }
 }

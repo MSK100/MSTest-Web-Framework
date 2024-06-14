@@ -17,12 +17,12 @@ namespace Web_Framework.WebApp.LoginPage
         [TestCategory("Checkout"), TestCategory("Positive"), TestCategory("UAT")]*/
         public void Checkout(string fname, string lname, string zip)
         {
-            driver.FindElement(AddtoCartXp).Click();
+            driver.FindElement(AddtoCartXp1).Click();
             driver.FindElement(CartXp).Click();
             driver.FindElement(CheckoutXp).Click();
-            driver.FindElement(Chk_FirstNameId).SendKeys("Test");
-            driver.FindElement(Chk_LastNameId).SendKeys("Test");
-            driver.FindElement(Chk_ZipCodeId).SendKeys("1000");
+            driver.FindElement(Chk_FirstNameId).SendKeys(fname);
+            driver.FindElement(Chk_LastNameId).SendKeys(lname);
+            driver.FindElement(Chk_ZipCodeId).SendKeys(zip);
             driver.FindElement(ContinueXp).Click();
             driver.FindElement(FinishXp).Click();
         }
@@ -39,6 +39,32 @@ namespace Web_Framework.WebApp.LoginPage
             driver.FindElement(Chk_LastNameId).SendKeys(lname);
             driver.FindElement(Chk_ZipCodeId).SendKeys(zip);
             driver.FindElement(ContinueXp).Click();
+            driver.FindElement(FinishXp).Click();
+        }
+        public void CheckoutMultipleProducts(string fname, string lname, string zip)
+        {
+            // Adding multiple items to the Cart
+            driver.FindElement(AddtoCartXp1).Click();
+            driver.FindElement(AddtoCartXp2).Click();
+            driver.FindElement(AddtoCartXp3).Click();
+            driver.FindElement(AddtoCartXp4).Click();
+            driver.FindElement(AddtoCartXp5).Click();
+
+            // Clicking Cart
+            driver.FindElement(CartXp).Click();
+
+            // Clicking Checkout Button
+            driver.FindElement(CheckoutXp).Click();
+
+            // Filling Delivery Info
+            driver.FindElement(Chk_FirstNameId).SendKeys(fname);
+            driver.FindElement(Chk_LastNameId).SendKeys(lname);
+            driver.FindElement(Chk_ZipCodeId).SendKeys(zip);
+
+            // Clicking Continue Button
+            driver.FindElement(ContinueXp).Click();
+
+            // Clicking Finish Button
             driver.FindElement(FinishXp).Click();
         }
     }

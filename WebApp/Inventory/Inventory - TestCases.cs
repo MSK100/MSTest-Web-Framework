@@ -13,16 +13,16 @@ namespace Web_Framework.WebApp.LoginPage
     [TestClass]
     public partial class Inventory
     {
-        [TestMethod]
-        [TestCategory("Product"), TestCategory("Positive"), TestCategory("UAT")]
+        /*[TestMethod]
+        [TestCategory("Product"), TestCategory("Positive"), TestCategory("UAT")]*/
         public void OpenProduct()
         {
             driver.FindElement(productOneId).Click();
             driver.FindElement(productBackBtnCs).Click();
         }
 
-        [TestMethod]
-        [TestCategory("Product"), TestCategory("Positive"), TestCategory("UAT")]
+       /* [TestMethod]
+        [TestCategory("Product"), TestCategory("Positive"), TestCategory("UAT")]*/
         public void Filters()
         {
             var filterDropdown = driver.FindElement(invAlpSortFilter);
